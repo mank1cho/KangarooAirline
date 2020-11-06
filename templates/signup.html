@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Travel &mdash; Kangaroo Airline</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="/static/css/superfish.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/static/css/magnific-popup.css">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="/static/css/bootstrap-datepicker.min.css">
+	<!-- CS Select -->
+	<link rel="stylesheet" href="/static/css/cs-select.css">
+	<link rel="stylesheet" href="/static/css/cs-skin-border.css">
+	
+	<link rel="stylesheet" href="/static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="/static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="{{url_for('home.index')}}"><i class="icon-airplane"></i>Kangaroo airline</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a href="{{url_for('home.index')}}">Home</a></li>
+							<li>
+								<a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
+								<ul class="fh5co-sub-menu">
+									<li><a href="#">Family</a></li>
+									<li><a href="#">CSS3 &amp; HTML5</a></li>
+									<li><a href="#">Angular JS</a></li>
+									<li><a href="#">Node JS</a></li>
+									<li><a href="#">Django &amp; Python</a></li>
+								</ul>
+							</li>
+							<li><a href="flight.html">Flights</a></li>
+							<li><a href="hotel.html">Hotel</a></li>
+							<li><a href="car.html">Car</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li class="active"><a href="{{url_for('signup.signupform')}}">Signin</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- end:header-top -->
+	
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+				<div class="desc">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-5">
+								<div class="tabulation animate-box">
+
+
+
+
+								{% if error is false %}
+								  <!-- Nav tabs -->
+								   <ul class="nav nav-tabs" role="tablist">
+									<li role="presentation"class="active">
+										<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">로그인</a>
+								   </li>
+
+								      <li role="presentation" >
+								      	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">회원가입</a>
+								      </li>
+
+								   </ul>
+							{% endif %}
+
+								{% if error is not false %}
+								  <!-- Nav tabs -->
+								  <ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" >
+										<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">로그인</a>
+								   </li>
+									<li role="presentation" class="active">
+										<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">회원가입</a>
+									</li>
+								 </ul>
+								 {% endif %}
+
+
+
+
+
+
+
+								   <!-- Tab panes -->
+
+									<div class="tab-content">
+
+
+										
+										{% if error is false %}}
+										<div role="tabpanel" class="tab-pane" id="flights">
+										{% endif %}
+
+
+										{% if error is not false %}
+										<div role="tabpanel" class="tab-pane active" id="flights">
+										{% endif %}
+										
+										<div class="row">
+
+											<form action="{{url_for('signup.signupcheck')}}" method="post" >
+
+											<div class="col-xxs-12 col-xs-12 mt">
+												<div class="input-field">
+
+													<label for="from">Passport No</label>
+													<input type="text" class="form-control" name="pno" placeholder="Input your Passport No" maxlength="10" minlength="6" required/>
+													{% if error is not false %}
+													<span style="color:red">{{ error }} Already Used PassportNo</span>
+													{% endif %}
+
+
+												</div>
+											</div>
+
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">First Name</label>
+													{% if error is not false %}
+													<input type="text" class="form-control" name="fname" value="{{kwargs['fname']}}" required/>
+													{% else %}
+													<input type="text" class="form-control" name="fname" placeholder="First Name"required/>
+													{% endif %}
+												</div>
+											</div>
+
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">Last Name</label>
+													{% if error is not false %}
+													<input type="text" class="form-control" name="lname" value="{{kwargs['lname']}}"required/>
+													{% else %}
+													<input type="text" class="form-control" name="lname" placeholder="Last Name"required/>
+													{% endif %}
+												</div>
+											</div>
+
+
+
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">Gender</label>
+													<br>
+														<label for="male">Male</label>
+														{% if error is not false and kwargs['sex']=='m'%}
+														<input type="radio" name="sex"value='m' checked="checked">
+														{% else %}
+														<input type="radio" name="sex"value='m'>
+														{% endif %}
+
+												</div>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<br>
+														<label for="female">Female</label>
+
+														{% if error is not false and kwargs['sex']=='f' %}
+														<input type="radio" name="sex"value='f' checked="checked">
+														{% else %}
+														<input type="radio" name="sex"value='f'>
+														{% endif %}
+
+												</div>
+											</div>
+
+
+
+											
+											<div class="col-xxs-12 col-xs-12 mt">
+												<div class="input-field">
+													<label for="from">password</label>
+													{% if error is not false %}
+													<input type="text" class="form-control" name="password" value="{{kwargs['password']}}" required maxlength="20" minlength="6"/>
+													{% else %}
+													<input type="text" class="form-control" name="password" placeholder="Enter Your Password"required maxlength="20" minlength="6"/>
+													{% endif %}
+												
+												
+												</div>
+											</div>
+
+											<div class="col-xxs-12 col-xs-12 mt">
+												<div class="input-field">
+													<label for="from">Nation</label>
+													{% if error is not false %}
+													<input type="text" class="form-control" name="nation" value="{{kwargs['nation']}}" required/>
+													{% else %}
+													<input type="text" class="form-control" name="nation" placeholder="Enter Your Password"required maxlength="20"/>
+													{% endif %}
+												
+												</div>
+											</div>
+
+
+											<div class="col-xxs-12 col-xs-12 mt">
+												<div class="input-field">
+													<label for="from">Birthday</label>
+													{% if error is not false %}
+													<input type="date" class="form-control" value="{{kwargs['birthday']}}" name="birthday"required/>
+													{% else %}
+													<input type="date" class="form-control" value='1994-09-05' name="birthday"required/>
+													{% endif %}
+												</div>
+											</div>
+
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">Passport Issue</label>
+													{% if error is not false %}
+													<input type="date" class="form-control" value="{{kwargs['Issue']}}" name="Issue"required/>
+													{% else %}
+													<input type="date" class="form-control" value='1994-09-05'name="Issue"required/>
+													{% endif %}
+												</div>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<div class="input-field">
+													<label for="from">Expiry</label>
+													{% if error is not false %}
+													<input type="date" class="form-control" value="{{kwargs['Expiry']}}" name="Expiry"required/>
+													{% else %}
+													<input type="date" class="form-control" value='1994-09-05' name="Expiry"required/>
+													{% endif %}
+												</div>
+											</div>
+
+											<div class="col-xs-12">
+												<input type="submit" class="btn btn-primary btn-block" value="Sign Up">
+											</div>
+										</form>
+										</div>
+									 </div>
+
+
+
+
+									 {% if error is false %}
+									 <div role="tabpanel" class="tab-pane active" id="hotels">
+									{% endif %}
+										
+									{% if error is not false %}
+									<div role="tabpanel" class="tab-pane" id="hotels">
+									{% endif %}
+
+									 	<div class="row">
+											<form action='{{url_for("signin.signincheck")}}' method="post">
+											<div class="col-xxs-12 col-xs-12 mt">
+												<div class="input-field">
+													<label for="from">ID</label>
+													<input type="text" name="id" class="form-control" id="from-place" placeholder="Enter Your ID"/>
+													{% if error_log is not false and error_log!='password' %}
+													<span style="color:red">{{ error_log }} is not vaild</span>
+													{% endif %}
+												</div>
+											</div>
+
+											<div class="col-xxs-12 col-xs-12 mt">
+												<div class="input-field">
+													<label for="from">Password</label>
+													<input type="text" name="password" class="form-control" id="from-place" placeholder="Enter Your Password"/>
+													{% if error_log=='password' %}
+													<span style="color:red">password is not match</span>
+													{% endif %}
+												</div>
+											</div>
+											<br>
+											<p style="font-size:12px;color:blue"> Did you Forgot your <a style="font-size:12px;color:red" href="{{url_for('id_pw.idpwform')}}" >ID or password?</a></p>			
+											<div class="col-xs-12">
+												<input type="submit" class="btn btn-primary btn-block" value="SignIn">
+											</div>
+
+										</form>
+										</div>
+										
+									 </div>
+									 
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+
+
+
+							<div class="desc2 animate-box">
+								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
+									<p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p>
+									<h2>Exclusive Limited Time Offer</h2>
+									<h3>Fly to Hong Kong via Los Angeles, USA</h3>
+									<span class="price">$599</span>
+									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	
+
+	<script src="/static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/static/js/jquery.waypoints.min.js"></script>
+	<script src="/static/js/sticky.js"></script>
+
+	<!-- Stellar -->
+	<script src="/static/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="/static/js/hoverIntent.js"></script>
+	<script src="/static/js/superfish.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/static/js/jquery.magnific-popup.min.js"></script>
+	<script src="/static/js/magnific-popup-options.js"></script>
+	<!-- Date Picker -->
+	<script src="/static/js/bootstrap-datepicker.min.js"></script>
+	<!-- CS Select -->
+	<script src="/static/js/classie.js"></script>
+	<script src="/static/js/selectFx.js"></script>
+	
+	<!-- Main JS -->
+	<script src="/static/js/main.js"></script>
+
+
+
+	</body>
+</html>
+
